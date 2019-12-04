@@ -9,13 +9,30 @@ body {
 	align-items: center;
 }
 
-.section {
+.wrapper {
 	width: 100%;
 	max-width: 480px;
 	height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	background: rgba(0,0,30,0.5);
 	border: 1px solid #999;
 	border-radius: 5px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.section {
+	width: 100%;
+	height: calc(100% - 56px);
 	margin: auto;
+}
+
+.main-wrap {
+	padding: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
