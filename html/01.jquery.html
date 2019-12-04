@@ -6,11 +6,43 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>JQuery를 배워보자</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/01.jquery.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-	
+	<!-- .container>.jumbotron>h1{jQuery를 배워보자}^ul>li*3{item$} -->
+	<div class="container">
+		<div class="jumbotron">
+			<h1>jQuery를 배워보자</h1>
+		</div>
+		<div class="my-2 p-3 text-center border">
+			<button id="btn1" class="btn btn-primary">눌러봐</button>
+			<button id="btnScore" class="btn btn-primary">성적보기</button>
+			<button id="btnScoreRev" class="btn btn-danger">성적지우기</button>
+		</div>
+		<ul class="lists p-3 border">
+			<li class="list">item1</li>
+			<li class="list">item2</li>
+			<li class="list">item3</li>
+		</ul>
+		<table id="scoreTb" class="table table-bordered table-hover text-center">
+			<thead class="thead-dark">
+				<tr>
+					<th>번호</th>
+					<th>이름</th>
+					<th>국어</th>
+					<th>영어</th>
+					<th>수학</th>
+					<th>총점</th>
+					<th>평균</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+	</div>
 	<script src="../js/01.jquery.js"></script>
 </body>
 </html>
