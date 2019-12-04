@@ -58,6 +58,10 @@ var scores = [
 	{id: 5, name: "홍길녀", kor: 87, eng: 82, math: 95},
 ];
 
+console.log(scores);
+console.log(JSON.stringify(scores));	// JS-Object -> json문자열
+console.log(JSON.parse(JSON.stringify(scores))); // json문자열 -> JS-Object
+
 $("#btnScore").click(function(){
 	for(var i=0, html=''; i<scores.length; i++) {
 		scores[i].tot = scores[i].kor + scores[i].eng + scores[i].math;
@@ -79,5 +83,22 @@ $("#btnScoreRev").click(function(){
 	$("#scoreTb").find("tbody").empty();
 });
 
+
+// 02efdd64bdc14b279bc91d9247db4722
+// 1835848
+
+$.ajax({
+	url: "https://api.openweathermap.org/data/2.5/weather",
+	type: "get",
+	dataType: "json",
+	data: {
+		id: 1835848,
+		appid: "02efdd64bdc14b279bc91d9247db4722",
+		units: "metric"
+	},
+	success: function(res){
+		console.log(res);
+	}
+});
 
 

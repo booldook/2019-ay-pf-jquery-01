@@ -1,0 +1,21 @@
+ul {list-style: none;}
+
+body {
+	height: 100vh;
+	background: url(../img/bg.jpg) no-repeat center;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.section {
+	width: 100%;
+	max-width: 480px;
+	height: 80vh;
+	background: rgba(0,0,30,0.5);
+	border: 1px solid #999;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	margin: auto;
+}
