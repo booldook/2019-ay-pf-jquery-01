@@ -45,8 +45,6 @@ function uiChg(view) {
 	}
 }
 
-
-
 // 이벤트
 $(".nav-item").click(function(){
 	uiChg($(this).data("view"));
