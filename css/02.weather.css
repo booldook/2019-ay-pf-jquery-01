@@ -41,4 +41,9 @@ body {
 	display: none;
 }
 
+.weekly-lists {
+	height: 80%;
+	overflow-y: scroll; 
+}
+
 .nav-item {cursor: pointer;}
