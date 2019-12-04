@@ -58,8 +58,40 @@ $("#cityId").change(function(){
 			appid: "02efdd64bdc14b279bc91d9247db4722",
 			units: "metric"
 		},
-		success: function(res){
-			console.log(res);
-		}
+		success: chgDaily
+	});
+	$.ajax({
+		url: "https://api.openweathermap.org/data/2.5/forecast",
+		data: {
+			id: $(this).val(),
+			appid: "02efdd64bdc14b279bc91d9247db4722",
+			units: "metric"
+		},
+		success: chgWeekly
 	});
 });
+
+function chgDaily(res) {
+	$(".daily-wrap .title").html(res.name);
+	$(".daily-wrap .icon").attr("src", "http://openweathermap.org/img/wn/"+res.weather[0].icon+"@2x.png");
+	$(".daily-wrap .temp").html(res.main.temp);
+	$(".daily-wrap .forecast").html(res.weather[0].description);	
+	$(".nav-item").eq(1).trigger("click");
+}
+
+function chgWeekly(res) {
+	console.log(res);
+	$(".weekly-wrap .title").html(res.city.name);
+	for(var i in res.list) {
+		icon = "http://openweathermap.org/img/wn/"+res.list[i].weather[0].icon+"@2x.png";
+		html 	= '<ul class="d-flex justify-content-between align-items-center p-2 border-bottom">';
+		html += '<li style="flex:20% 0 0"><img src="'+icon+'" alt="icon" class="icon"></li>';
+		html += '<li style="flex:75% 0 0">';
+		html += '<div>날짜: <span class="time">'+new Date(res.list[i].dt * 1000)+'</span></div>';
+		html += '<div>온도: <span class="temp">'+res.list[i].main.temp+'도</span></div>';
+		html += '<div>날씨: <span class="forecast">'+res.list[i].weather[0].description+'</span></div>';
+		html += '</li>';
+		html += '</ul>';
+		$(".weekly-lists").append(html);
+	}
+}
