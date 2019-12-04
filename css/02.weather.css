@@ -36,3 +36,5 @@ body {
 	justify-content: center;
 	flex-direction: column;
 }
+
+.nav-item {cursor: pointer;}
